@@ -1,1 +1,40 @@
-<mxfile host="app.diagrams.net" modified="2020-07-24T08:42:47.576Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="f9glfdMkKI32AXjdj6mF" version="13.5.1" type="github"><diagram id="FbFJJBOBrlT_LoqqgO9q" name="Page-1">jZJNT8QgEIZ/DUcTWra7enTrqjF60B40XgwpYyGhpWGpbf31Ujv0I5tN9kKGZz4Y3hnC0rJ7sLyWL0aAJjEVHWF3JI6T7Y0/B9CPgNFkBIVVYkTRDDL1Cwgp0kYJOK4CnTHaqXoNc1NVkLsV49aadh32bfT61ZoXcAKynOtT+q6EkyO9TujMH0EVMrwcUfSUPAQjOEouTLtA7EBYao1xo1V2KehBu6DLmHd/xjs1ZqFylyTo151++nrbyOePorrdbdi++LzCKj9cN/hhbNb1QQFrmkrAUIQStm+lcpDVPB+8rR+5Z9KV2t8ib2I5sA66s31G0+/91oApwdneh2ACC6OfNgbv7ax/FESVC+23yDiOvJhKz6p4A4UJ13kA/77FFrPDHw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-07-24T09:45:34.823Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="VBSL-s6ga3hIX0X5yHU0" version="13.5.1" type="github">
+  <diagram id="FbFJJBOBrlT_LoqqgO9q" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iIErcDSMbeZujc61zSbI-16" value="&lt;span&gt;static int rcar_cr7_rproc_probe(struct platform_device *pdev)&amp;nbsp; {&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span&gt;struct device *dev = &amp;amp;pdev-&amp;gt;dev;&lt;/span&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct rcar_cr7_rproc *rrproc;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct rproc *rproc;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; int ret;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; void* mmio_rst_base;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; u32 regval;&lt;/div&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span&gt;	&lt;/span&gt;&lt;span&gt;// Get Reset Controller node (RST)&lt;/span&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; mmio_rst_base =&amp;nbsp;&lt;font color=&quot;#6666ff&quot;&gt;ioremap_nocache&lt;/font&gt;(RST_BASE, 4);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; regval = ioread32(mmio_rst_base&lt;font color=&quot;#3333ff&quot;&gt;&amp;nbsp;+&lt;/font&gt;&amp;nbsp;RST_MODEMR_OFFSET);&lt;/div&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span&gt;rrproc = rproc-&amp;gt;priv;&lt;/span&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; rrproc-&amp;gt;rproc = rproc;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; rproc-&amp;gt;has_iommu = false;&lt;/div&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;INIT_WORK(&amp;amp;rrproc-&amp;gt;workqueue, handle_event);&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span&gt;platform_set_drvdata(pdev, rrproc);&lt;br&gt;&lt;/span&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; ret = rcar_mfis_register_notifier(MFIS_CHANNEL, &amp;amp;rcar_cr7_notifier_block, rrproc);&lt;/div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;ret = rproc_add(rproc);&lt;/span&gt;&lt;br&gt;&lt;span&gt;}&lt;/span&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontFamily=Tahoma;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="10" y="30" width="510" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="iIErcDSMbeZujc61zSbI-19" value="" style="endArrow=classic;html=1;fontFamily=Tahoma;" edge="1" parent="1" target="iIErcDSMbeZujc61zSbI-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="270" as="sourcePoint" />
+            <mxPoint x="540" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="520" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIErcDSMbeZujc61zSbI-20" value="&lt;div&gt;static void handle_event(struct work_struct *work)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; struct rcar_cr7_rproc *rrproc =&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; container_of(work, struct rcar_cr7_rproc, workqueue);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;/* Process incoming buffers on all our vrings */&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rproc_vq_interrupt(rrproc-&amp;gt;rproc, 0);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rproc_vq_interrupt(rrproc-&amp;gt;rproc, 1);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontFamily=Tahoma;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="390" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="iIErcDSMbeZujc61zSbI-21" value="&lt;div&gt;&lt;div&gt;int rcar_mfis_register_notifier(int channel, struct notifier_block *nb, void *data)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;struct rcar_mfis_ch* rcar_mfis_ch;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;struct atomic_notifier_head *nh;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;rcar_mfis_ch = rcar_mfis_channel_get(channel);&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;if (!rcar_mfis_ch) {&lt;/div&gt;&lt;div&gt;&lt;span&gt;		&lt;/span&gt;return -EINVAL;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;}&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if(NULL == rcmfis_dev){&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; printk(&quot;mfis driver not propoerly loaded. Check device tree for renesas,mfis\n&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return -ENXIO;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;rcar_mfis_ch-&amp;gt;notifier_data = data;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;nh = &amp;amp;rcar_mfis_ch-&amp;gt;notifier_head;&lt;/div&gt;&lt;div&gt;&lt;span&gt;	&lt;/span&gt;return atomic_notifier_chain_register(nh, nb);&lt;/div&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;labelBackgroundColor=none;fontFamily=Tahoma;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="230" width="490" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="iIErcDSMbeZujc61zSbI-22" value="" style="endArrow=classic;html=1;fontFamily=Tahoma;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="410" as="sourcePoint" />
+            <mxPoint x="670" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIErcDSMbeZujc61zSbI-23" value="" style="endArrow=classic;html=1;fontFamily=Tahoma;entryX=-0.002;entryY=0.549;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="iIErcDSMbeZujc61zSbI-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="330" as="sourcePoint" />
+            <mxPoint x="210" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
